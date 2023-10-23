@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap" rel="stylesheet">
+  <title>email service</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Poppins&display=swap');
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(134, 127, 127);
+      border-radius: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #230737;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .email {
+      display: block;
+      margin: auto;
+      position: relative;
+      top: 20vh;
+      width: 90%;
+      max-width: 800px;
+      height: 70vh;
+      border-radius: 10px;
+      background: #ffffff;
+      overflow-y: scroll;
+    }
+
+    .text-edit {
+      margin: auto;
+      padding: 40px;
+      font-size: 13px;
+    }
+
+    p[contenteditable="true"] {
+      outline: none;
+      border: none;
+      cursor: text;
+    }
+
+    .img-box {
+      margin: auto;
+      padding: 0px 30px;
+    }
+
+    .defImage {
+      height: 50px;
+      max-width: 50px;
+      background-image: url("default_image.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .defText {
+      font-size: 4vw;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1.2;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .image {
+      text-align: center;
+    }
+
+    #editableImage {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .email {
+        top: 10vh;
+        height: 80vh;
+      }
+
+      .text-edit {
+        padding: 20px;
+        font-size: 12px;
+      }
+
+      .defText {
+        font-size: 6vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="email body">
+    <p class="text-edit" id="changeText" contenteditable="true">Hi<br>The example above is looking rough. The
+        subject line is vague, the body is full of spelling
+        errors and rambling thoughts, and the main point is difficult to find. Plus, the overall tone
+        is unprofessional.
+        <br><br>
+        Writing concise emails is a key skill in the professional world, which you can develop through
+        consistent practice. Keep writing and learning, and you'll become a more effective communicator
+        with each email you create.
+      </p>
+    
+      <div>
+        <label for="colorSelect">Select font color:</label>
+        <select id="colorSelect">
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+    
+      <div>
+        <label for="fontSelect">Select font style:</label>
+        <select id="fontSelect">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="Verdana, sans-serif">Verdana</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="Courier New, monospace">Courier New</option>
+        </select>
+      </div>
+    
+      <script>
+        var colorSelect = document.getElementById("colorSelect");
+        var fontSelect = document.getElementById("fontSelect");
+        var changeText = document.getElementById("changeText");
+    
+        colorSelect.addEventListener("change", function() {
+          var selectedColor = colorSelect.value;
+          changeText.style.color = selectedColor;
+        });
+    
+        fontSelect.addEventListener("change", function() {
+          var selectedFont = fontSelect.value;
+          changeText.style.fontFamily = selectedFont;
+        });
+      </script>
+    <div class="img-box">
+      <div class="defImage" id="defImage">
+        <p id="defText" class="defText" contenteditable="true"><br></p>
+        <img id="myImage" src="">
+      </div>
+      <div class="image">
+        <img id="editableImage" src="https://drive.google.com/uc?id=1FQsZselkw3KdcHVDrIynAMnhQJ-r5xsH" alt="">
+      </div>
+
+      <input type="file" id="imageInput" accept="image/*">
+
+      <script>
+        var imageInput = document.getElementById("imageInput");
+        var editableImage = document.getElementById("editableImage");
+
+        imageInput.addEventListener("change", function(event) {
+          var file = event.target.files[0];
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+            var newImageSrc = e.target.result;
+            editableImage.src = newImageSrc;
+          };
+
+          reader.readAsDataURL(file);
+        });
+      </script>
+    </div>
+  </section>
+</body>
+
+</html>
