@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+
+  .page-container {
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    background-color: #fff;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .forms-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .form-group {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    width: 120px; 
+  }
+
+  input[type="radio"],
+  input[type="text"],
+  input[type="color"],
+  textarea {
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; 
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  input[type="color"] {
+    vertical-align: middle;
+    padding: 0;
+  }
+
+  input[type="submit"] {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+  }
+  input[type="reset"] {
+    padding: 8px 20px;
+    background-color: #f9fafc;
+    color: #040000;
+    border: 1px solid #0d0d0d;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+  }
+
+  input[type="submit"]:hover{
+    background-color: #0a3b6f;
+  }
+  input[type="reset"]:hover {
+    background-color: #8f9193;
+  }
+</style>
+</head>
+<body>
+<div class="page-container">
+  <div class="forms-container">
+    <div class="form-group">
+      <form>
+        <h1>Page Setup:</h1>
+        <label for="potrait">Orientation:</label>
+        <input type="radio" id="potrait" name="orientation" value="Portrait">
+        <label for="Landscape">Landscape</label>
+        <input type="radio" id="Landscape" name="orientation" value="Landscape"><br>
+      </form>
+    </div>
+    <div class="form-group">
+      <form>
+        <p>Margin:</p>
+        <label for="top">TOP:</label>
+        <input type="text" id="top" name="fname" value="2.54"><br>
+        <label for="bottom">Bottom:</label>
+        <input type="text" id="bottom" name="lname" value="2.54"><br>
+        <label for="left">Left:</label>
+        <input type="text" id="left" name="lname" value="2.54"><br>
+        <label for="right">Right:</label>
+        <input type="text" id="right" name="lname" value="2.54"><br> 
+      </form>
+    </div>
+  </div>
+  <form style="margin:10px;">
+    <label for="pagesize">Page Size:</label><br>
+    <input type="text" id="pagesize" name="fname" value="Letter (21.6cm x 27.9cm)"><br>
+  </form>
+  <form style="margin:10px;">
+    <label for="favcolor">Page color:</label><br>
+    <input type="color" id="favcolor" name="favcolor">
+  </form>
+  <div class="space" style="padding:30px;"></div>
+  <input type="submit" value="OK" style="margin:10px;">
+  <input type="reset" value="Cancel">
+</div>
+</body>
+</html>

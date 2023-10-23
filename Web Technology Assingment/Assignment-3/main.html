@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <style>
+      /* Reset default margin and padding for all elements */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      body {
+        font-family: Arial, sans-serif;
+      }
+    
+      /* Container styles */
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    
+      /* Header styles */
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #f2f2f2;
+        background-color: #333;
+        padding: 10px 0;
+      }
+    
+      /* Table styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 40px;
+      }
+    
+      th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+    
+      th {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+    
+      /* FAQ section styles */
+      .faq-section {
+        margin-top: 20px;
+      }
+    
+      .faq-item {
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+    
+      .faq-question {
+        font-weight: bold;
+      }
+    
+      /* Footer styles */
+      .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+      }
+    
+      .social-link {
+        margin-right: 1rem;
+        color: #0b0b0b;
+      }
+    </style>
+    
+    <!-- html2pdf CDN link -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <button id="download-button">Download as PDF</button>
+    <div class="container">
+      <h1>Faculty Directory</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Faculty Image</th>
+            <th>Faculty Name</th>
+            <th>Area Of Research Study</th>
+            <th>Contact Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>   
+            <td>Computer Science and Technology</td>
+            <td><img src="https://drive.google.com/uc?id=1YaJEOwrtUZFUoZKKATtHGtKx2F2RLQT5" alt="Faculty 1 Image" width="100" height="100"></td>
+            <td style="padding-top: 20px;">
+                John Doe<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To connect</a>
+            </td>       
+            <td style="padding-top: 20px;"><ul>
+              <li>Artificial Intelligence</li>
+              <li>Data Science</li>          
+              <li>Machine Learning</li>
+              <li>Computer Vision</li>
+            </ul><br>
+                <a href="https://example.com" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To know more</a>
+            </td>
+            <td style="padding-top: 20px;">
+              Email: john.doe@example.com<br>
+              Phone Number: +1 (123) 456-7890<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To contact</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Computer Science and Technology</td>
+            <td><img src="https://drive.google.com/uc?id=1YaJEOwrtUZFUoZKKATtHGtKx2F2RLQT5" alt="Faculty 2 Image" width="100" height="100"></td>
+            <td style="padding-top: 20px;">
+                Jane Smith<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To connect</a>
+            </td>       
+            <td style="padding-top: 20px;"><ul>
+              <li>Database Systems</li>
+              <li>Web Development</li>          
+              <li>Software Engineering</li>
+            </ul><br>
+                <a href="https://example.com" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To know more</a>
+            </td>
+            <td style="padding-top: 20px;">
+              Email: jane.smith@example.com<br>
+              Phone Number: +1 (123) 456-7890<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To contact</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Computer Science and Technology</td>
+            <td><img src="https://drive.google.com/uc?id=1YaJEOwrtUZFUoZKKATtHGtKx2F2RLQT5" alt="Faculty 3 Image" width="100" height="100"></td>
+            <td style="padding-top: 20px;">
+                Alice Johnson<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To connect</a>
+            </td>       
+            <td style="padding-top: 20px;"><ul>
+              <li>Cybersecurity</li>
+              <li>Network Security</li>          
+              <li>Blockchain Technology</li>
+            </ul><br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To know more</a>
+            </td>
+            <td style="padding-top: 20px;">
+              Email: alice.johnson@example.com<br>
+              Phone Number: +1 (123) 456-7890<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To contact</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Computer Science and Technology</td>
+            <td><img src="https://drive.google.com/uc?id=1YaJEOwrtUZFUoZKKATtHGtKx2F2RLQT5" alt="Faculty 4 Image" width="100" height="100"></td>
+            <td style="padding-top: 20px;">
+                David Brown<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To connect</a>
+            </td>       
+            <td style="padding-top: 20px;"><ul>
+              <li>Cloud Computing</li>
+              <li>Big Data Analytics</li>          
+              <li>Internet of Things (IoT)</li>
+            </ul><br>
+                <a href="https://example.com" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To know more</a>
+            </td>
+            <td style="padding-top: 20px;">
+              Email: david.brown@example.com<br>
+              Phone Number: +1 (123) 456-7890<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QhQbToQvA4ofZxnV0n5aIAVQWFJJ_ZcFkA2Jg8cplf6krw/viewform?embedded=true" style="text-decoration: none; color: #c6bdbd; display: block; margin-top: 10px;">(Click Here) To contact</a>
+            </td>
+          </tr>
+        </tbody>    
+      </table>
+      <button id="downloadPdfButton">Download PDF</button>
+    </div>
+      <div id="pspdfkit-footer">
+        <div class="footer-columns">
+          <span>Invoice</span>
+          <span>Page {{ pageNumber }} of {{ pageCount }}</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      const button = document.getElementById("download-button");
+
+      function generatePDF() {
+        // Choose the element that your content will be rendered to.
+        const element = document.getElementById("invoice");
+        // Choose the element and save the PDF for your user.
+        html2pdf().from(element).save();
+      }
+
+      button.addEventListener("click", generatePDF);
+    </script>
+  </body>
+</html>
