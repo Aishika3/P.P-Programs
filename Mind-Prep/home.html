@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="%PUBLIC_URL%/mindprep.ico" type="image/x-icon">
+    <title>Mind_Prep_Home</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #150C2F;
+        }
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            padding-left: 20px;
+        }
+
+        .logo img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 70px;
+            width: auto;
+        }
+
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            margin-bottom: 6px;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            flex-direction: column;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s, transform 0.3s ease;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .register {
+            background-color: #FFE604;
+            color: #150C2F;
+            border-radius: 15px;
+            height: 25px;
+            padding: 5px;
+        }
+
+        .navbar .nav-links .register a {
+            color: #150C2F;
+        }
+
+        .nav-links.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition-delay: 0s;
+        }
+
+        .nav-links.open a {
+            color: #150C2F;
+        }
+
+        .nav-links.open li {
+            margin: 10px 0;
+            padding: 20px;
+        }
+
+        .nav-links li {
+            margin: 0px 80px;
+            font-family: 'Inder', sans-serif;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        @media (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
+
+            .nav-links {
+                position: static;
+                flex-direction: row;
+                background-color: transparent;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                transition: none;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex: 1 1 calc(50% - 20px);
+            padding: 20px;
+            color: white;
+            font-family: 'Inika', serif;
+            font-size: 25px;
+            line-height: 1.5;
+        }
+
+        .card {
+            flex: 1 1 calc(50% - 20px);
+            padding: 20px;
+            position: relative;
+            box-sizing: border-box;
+            background-image: linear-gradient(to bottom, #6D206FA6, #4B53FFA6);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-family: 'Inder', sans-serif;
+            font-weight: 400;
+        }
+
+        .card img {
+            height: 180px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .card p {
+            color: #ffffff;
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .card .card-text {
+            color: #1EF1FF;
+        }
+        .card1 {
+    flex: 1 1 calc(50% - 20px);
+    padding: 10px;
+    position: relative;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, #6D206FA6, #4B53FFA6);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Inder', sans-serif;
+    font-weight: 400;
+    transform: rotate(12.01deg);
+    margin-bottom: 40px;
+}
+        .card1 p:last-child {
+    border: 1px solid #420743;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #D75ED2;
+    box-shadow: 0px 4px 4px 3px #3B0056;
+}
+ @media screen and (max-width: 700px) {
+    .card1 {
+        flex-basis: calc(100% - 20px);
+    }
+    .container .card1 p {
+                font-size: 14px;
+            }
+}
+        @media screen and (max-width: 700px) {
+    .card,
+    .card1 {
+        flex-basis: calc(100% - 20px); /* Adjusted the width for smaller screens */
+    }
+}
+        @media (max-width: 700px) {
+
+            .container .content,
+            .container .card {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+
+            .container .card p {
+                font-size: 14px;
+            }
+        }
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .images img {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            border-radius: 20px;
+        }
+
+        .imagess {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+        }
+
+        .imagess .img-container {
+            text-align: center;
+        }
+
+        .imagess img {
+            max-width: 70%;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 100px;
+            margin-right: 50px;
+            border-radius: 20px;
+        }
+
+        .imagess a {
+            display: block;
+            color: aliceblue;
+        }   
+        @media (max-width: 768px) {
+
+            .images img,
+            .imagess img {
+                max-width: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            .images img,
+            .imagess img {
+                max-width: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        .container_courses {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sub-head {
+            background-color: #1E1E1E;
+            padding: 5px;
+        }
+
+        .sub-head h1 {
+            color: #F5F0EA;
+            font-size: 40px;
+            text-align: left;
+            font-weight: bold;
+            font-family: 'Poppins Medium';
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 14px;
+            border-radius: 20px;
+            color: #000000;
+            background-color: #32FFE6;
+            border-color: #32FFE6;
+            font-size: 24px;
+            margin: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .imagediv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgdiv {
+  flex: 1 1 300px;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, #3AF1FD 0%, #783AFD 100%);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Inder', sans-serif;
+  font-weight: 400;
+}
+
+.imgdiv img {
+  height: 180px;
+  width: auto;
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.imgdiv a {
+  color: #FFE500;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+        @media only screen and (max-width: 600px) {
+            .heading h1 {
+                font-size: 30px;
+            }
+
+            .sub-head h2 {
+                font-size: 30px;
+            }
+
+            .btn {
+                margin: 25px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .heading h1 {
+                font-size: 24px;
+            }
+
+            .sub-head h2 {
+                font-size: 24px;
+            }
+
+            .btn {
+                margin: 10px;
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
+
+        .enroll {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .container .countdown {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            background: #040343;
+            padding: 10px;
+        }
+
+        #days,
+        #hours,
+        #minutes,
+        #seconds {
+            font-size: 44px;
+        }
+
+        .countdown-item {
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://drive.google.com/uc?id=1WE-gDClA9QnDmVrv2BzLuDl9udEatCom" alt="Logo" style="height: 95px; width: auto;">
+        </div>
+        <div class="menu-icon">
+            <span class="hamburger"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#container_courses">About The cohort</a></li>
+            <li class="register"><a href="https://topmate.io/anish_de/355993">Register for the cohort</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <p>Start your <span style="color: #EFFF3A;">Coding Journey</span><br>by learning from <br><span
+                    style="font-family:'Josefin Sans', sans-serif; color: #EA98FF; font-size: 45px;">THE BEST</span></p>
+            <div class="countdown">
+                <h2>Batch starting from <br><span style="color: #00FF38;">1st July!</span></h2>
+                <!-- <h2 style="color: #00FF38;">1st July!</h2>   -->
+                <div id="countdown">
+                    <div class="countdown-item">
+                        <span id="days"></span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours"></span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes"></span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds"></span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+                <h4>Only left!</h4>
+                <a href="https://topmate.io/anish_de/355993" style="text-decoration: none;justify-content: center;">
+                    <button class="btn" style=" 
+                        padding:14px;
+                        border-radius:20px;
+                        color:#000000;
+                        background-color:#32FFE6;
+                        border-color:#32FFE6 ;
+                        font-size:24px;
+                        margin:50px;
+                        cursor:pointer;">Enroll Now!
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://drive.google.com/uc?id=1hstWUAH4Izzd7fjno3y2bV7YgBdcCmJY">
+            <h3 style="font-size: 30px; font-weight: 400;">Anish De</h3>
+            <p>SWE - <span class="card-text">Microsoft</span> <br>
+                Candidate Master - <span class="card-text">CodeForces</span><br>
+                SWE Intern - <span class="card-text">Media.Net, Microsoft</span><br>
+                Guardian (Top 0.2%) - <span class="card-text">LeetCode</span><br>
+                ICPC 3X Regionalist <br>
+                Ex Problem Setter - <span class="card-text">LeetCode, HackerRank, Scaler</span> <br>
+                <span class="card-text">19+</span> Mentorships done with a rating of <span class="card-text">5</span> on
+                <span class="card-text">Topmate</span>
+            </p>
+        </div>
+    </div>
+    <div class="container_courses" id="container_courses">
+        <div class="sub-head" style="background-color:#1E1E1E; padding: 5px;">
+            <h1
+                style="color: #F5F0EA; font-size: 40px; text-align: left; font-weight: bold;font-family: 'Poppins Medium';;">
+                About the course</h1>
+        </div>
+        <div class="images">
+            <img src="https://drive.google.com/uc?id=1tMGwcN1VynudpaoeBKZuYDnHWwDqED6k" alt="">
+            <img src="https://drive.google.com/uc?id=1dUq7lBeXuK309lekf5YIuxDAEJszr4x9" alt="">
+        </div>
+        <div class="button" style="display: flex; justify-content: center; align-items: center;">
+            <a href="https://topmate.io/anish_de/355993" style="text-decoration: none;justify-content: center;">
+                <button class="btn" style=" 
+                    padding:14px;
+                    border-radius:20px;
+                    color:#000000;
+                    background-color:#32FFE6;
+                    border-color:#32FFE6 ;
+                    font-size:24px;
+                    margin:50px;
+                    cursor:pointer;">Enroll Now!
+                </button>
+            </a>
+        </div>
+        <div class="container">
+            <div class="content">
+                <p style="font-size:30px;text-align: center;">Best Currated and tailored syllabus and schedule to make your<br><span style="color:#FFC700;"><b>Interview Prepartion</b></span><br><span
+                        style="font-family:'Josefin Sans', sans-serif; color: #1CF018;"><b>strong</b></span><br>like never before</p>
+                <p style="font-family:'Josefin Sans', sans-serif;font-size:40px;text-align: center;">Batch of only 30!</p>
+            </div>
+            <div class="card1">
+                <p>Introduction about course and welcoming<br> Greedy, Maths<br> Bit-Masking,DSU<br> Binary Trees and BSTs<br> Trees and Graph<br>Arrays , LinkedLists<br>
+                    CS Fundamentals and LLD Roadmap<br> How to deal with open-ended rounds<br> How to deal with open-ended rounds<br> Leetcode and DSA Roadmap and Guidance<br>
+                    CP roadmap and profile review<br> Resume building and preview session<br>
+                </p>
+                <p styles="background-color:#D75ED2;">1:1 Mentorship Session<br>
+                    1:1 Personalized DSA Mock Interview </p>
+            </div>
+        </div>
+        <div class="sub-head" style="background-color:#1E1E1E; padding: 5px;">
+            <h1
+                style="color: #F5F0EA; font-size: 40px; text-align: left; font-weight: bold;font-family: 'Poppins Medium';;">
+                Other courses to check out for</h1>
+        </div>
+        <div class="imagediv">
+            <div class="imgdiv">
+                <img src="https://drive.google.com/uc?id=1HJobN9WGjNvxKQgoUIEb477RtfyhuNpx" alt="">
+                <div class="details" style=" padding: 20px; border-radius: 5px;">
+                    <h2 style="font-size: 30px; color:  #F5F0EA;justify-content:center;font-family: 'Poppins Medium';">Personal Interview Preparation</h2>
+                    <p style="font-size: 20px; color:  #F5F0EA;justify-content:center;font-family: 'Poppins Medium';">Supercharge your career with interview preparation tips and secure your dream job today</p>
+                </div>
+                <a class="enroll" href="https://topmate.io/anish_de/189392">Enroll Now!</a>
+            </div> 
+            <div class="imgdiv">
+                <img src="https://drive.google.com/uc?id=16sug0q1hzq0rul_2iJkK_jl3DbS2mUws" alt="">
+                <div class="details" style=" padding: 20px; border-radius: 5px;">
+                    <h2 style="font-size: 30px; color:  #F5F0EA;justify-content:center;font-family: 'Poppins Medium';">Personalized DSA guidance for interviews</h2>
+                    <p style="font-size: 20px; color:  #F5F0EA;justify-content:center;font-family: 'Poppins Medium';"> Important topics and how to approach problems for that particular topic will be discussed along with most expected interview questions </p>
+                </div>
+                <a class="enroll" href="https://topmate.io/anish_de/189392">Enroll Now!</a>
+            </div>
+            <div class="imgdiv">
+                <img src="https://drive.google.com/uc?id=1-hEeX04Ez0kTleoTXAmoLtL3LX_o7SX0" alt="">
+                <div class="details" style=" padding: 20px; border-radius: 5px;">
+                    <h2 style="font-size: 25px; color:  #F5F0EA;justify-content:center;font-family: 'Poppins Medium';">Personal Interview Preparation for product based companies</h2>
+                    <p style="font-size: 15px; color:  #F5F0EA;justify-content:center;font-family: 'Poppins Medium';">Leveraging my personal experience cracking interviews at giants like Microsoft, Media.net, CRED ,this course provides an all encompassing guide</p>
+                </div>
+                <a class="enroll" href="https://topmate.io/anish_de/189392">Enroll Now!</a>
+            </div>        
+        </div>
+        <div class="sub-head" style="background-color:#1E1E1E; padding: 5px;">
+            <h1 style="color: #F5F0EA; font-size: 40px; text-align: left; font-weight: bold;font-family: 'Poppins Medium';;">Official Partners</h1>
+        </div>
+        <div class="imagess">
+            <div class="img-container">
+                <img src="https://drive.google.com/uc?id=1ccdiJ3F778a8Empud2avpTSnEHTojJhw" alt="">
+                <a href="https://automatiks.in/" style="color: aliceblue;"><i><b>https://automatiks.in/</i></b></a>
+            </div>
+            <div class="img-container">
+                <img src="https://drive.google.com/uc?id=1m1oOv1PJ2UgrLf79jLBNtkb1IQnzB5n7" alt="">
+                <a href="https://automatiks.in/" style="color: aliceblue;"><i><b>https://www.easejobs.in/</i></b></a>
+            </div>
+        </div> 
+        </div>
+    </div>
+    <script>
+        var menuIcon = document.querySelector('.menu-icon');
+        var navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', function () {
+            menuIcon.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+
+        const countdownDate = new Date('2023-07-01T00:00:00').getTime();
+
+        const countdownTimer = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = "Countdown Expired";
+            }
+        }
+    </script>
+</body>
+
+</html>

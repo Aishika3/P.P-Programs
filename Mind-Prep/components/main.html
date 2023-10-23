@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--our html codes starts--->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Prep</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+        body {
+            background: #1E1E1E;
+        }
+        
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .images img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-left: 80px;
+            border-radius: 20px;
+        }
+        
+        .imagess {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+        }
+        
+        .imagess img {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-left: 100px;
+            margin-right: 50px;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .images img,
+            .imagess img {
+                max-width: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .sub-head {
+            background-color: #1E1E1E;
+            padding: 5px;
+        }
+        
+        .sub-head h1 {
+            color: #F5F0EA;
+            font-size: 40px;
+            text-align: left;
+            font-weight: bold;
+            font-family: 'Poppins Medium';
+        }
+        
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 14px;
+            border-radius: 20px;
+            color: #000000;
+            background-color: #32FFE6;
+            border-color: #32FFE6;
+            font-size: 24px;
+            margin: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .imagediv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imgdiv {
+    flex: 1 1 300px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: linear-gradient(180deg, #3AF1FD 0%, #783AFD 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.imgdiv img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.imgdiv a {
+    color: #FFE500;;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+            .heading h1 {
+                font-size: 30px;
+            }
+
+            .sub-head h2 {
+                font-size: 30px;
+            }
+
+            .btn {
+                margin: 25px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .heading h1 {
+                font-size: 24px;
+            }
+
+            .sub-head h2 {
+                font-size: 24px;
+            }
+
+            .btn {
+                margin: 10px;
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="sub-head" style="background-color:#1E1E1E; padding: 5px;">
+        <h1 style="color: #F5F0EA; font-size: 40px; text-align: left; font-weight: bold;font-family: 'Poppins Medium';;">About the course</h1>
+    </div>
+    <div class="images">
+        <img src="https://drive.google.com/uc?id=1tMGwcN1VynudpaoeBKZuYDnHWwDqED6k" alt="">
+        <img src="https://drive.google.com/uc?id=1dUq7lBeXuK309lekf5YIuxDAEJszr4x9" alt="">
+    </div>
+    <div class="button" style="display: flex; justify-content: center; align-items: center;">
+        <a href="#" style="text-decoration: none;justify-content: center;">
+            <button class="btn" style=" 
+                padding:14px;
+                border-radius:20px;
+                color:#000000;
+                background-color:#32FFE6;
+                border-color:#32FFE6 ;
+                font-size:24px;
+                margin:50px;
+                cursor:pointer;">Enroll Now!
+            </button>
+        </a>  
+    </div>
+    <div class="sub-head" style="background-color:#1E1E1E; padding: 5px;">
+        <h1 style="color: #F5F0EA; font-size: 40px; text-align: left; font-weight: bold;font-family: 'Poppins Medium';;">Other courses to check out for</h1>
+    </div>
+    <div class="imagediv">
+        <div class="imgdiv">
+            <img src="https://drive.google.com/uc?id=1m6Pb_HvP64KKkI69q1v399qPUstnYfJx" alt="">
+            <a href="#">Enroll Now!</a>
+        </div> 
+        <div class="imgdiv">
+            <img src="https://drive.google.com/uc?id=1UoO7hc2hC1332d0WFOJtGtZmNgEc8lCz" alt="">
+            <a href="#">Enroll Now!</a>
+        </div> 
+        <div class="imgdiv">
+            <img src="https://drive.google.com/uc?id=1sFsXH1PtfakAXtY_02JmdXAsHfdOIlE1" alt="">
+            <a href="#">Enroll Now!</a>
+        </div>        
+    </div>    
+    <div class="sub-head" style="background-color:#1E1E1E; padding: 5px;">
+        <h1 style="color: #F5F0EA; font-size: 40px; text-align: left; font-weight: bold;font-family: 'Poppins Medium';;">Official Partners</h1>
+    </div>
+    <div class="imagess">
+        <img src="https://drive.google.com/uc?id=1ccdiJ3F778a8Empud2avpTSnEHTojJhw" alt="">
+        <img src="https://drive.google.com/uc?id=1m1oOv1PJ2UgrLf79jLBNtkb1IQnzB5n7" alt="">
+    </div>
+    </div>
+</body>
+</html>

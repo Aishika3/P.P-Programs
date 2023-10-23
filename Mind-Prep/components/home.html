@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind_Prep_Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #150C2F;
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            padding-left:20px;
+        }
+
+        .logo img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 70px;
+            width: auto;
+        }
+
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            margin-bottom: 6px;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            flex-direction: column;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s, transform 0.3s ease;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .register {
+            background-color: #FFE604;
+            color: #150C2F;
+            border-radius: 15px;
+            height: 25px;
+            padding: 5px;
+        }
+
+        .navbar .nav-links .register a {
+            color: #150C2F;
+        }
+
+        .nav-links.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition-delay: 0s;
+        }
+
+        .nav-links.open a {
+            color: #150C2F;
+        }
+
+        .nav-links.open li {
+            margin: 10px 0;
+            padding: 20px;
+        }
+
+        .nav-links li {
+            margin: 0px 80px;
+            font-family: 'Inder', sans-serif;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        @media (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
+
+            .nav-links {
+                position: static;
+                flex-direction: row;
+                background-color: transparent;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                transition: none;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex: 1 1 calc(50% - 20px);
+            padding: 20px;
+            color: white;
+            font-family: 'Inika', serif;
+            font-size: 25px;
+            line-height: 1.5;
+        }
+
+        .card {
+            flex: 1 1 calc(50% - 20px);
+            padding: 20px;
+            position: relative;
+            box-sizing: border-box;
+            background-image: linear-gradient(to bottom, #6D206FA6, #4B53FFA6);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-family: 'Inder', sans-serif;
+            font-weight: 400;
+        }
+
+        .card img {
+            height: 180px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .card p {
+            color: #ffffff;
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container .content,
+            .container .card {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://drive.google.com/uc?id=1WE-gDClA9QnDmVrv2BzLuDl9udEatCom" alt="Logo">
+        </div>
+        <div class="menu-icon">
+            <span class="hamburger"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="main.html">About Us</a></li>
+            <li><a href="main.html">contact Us</a></li>
+            <li class="register"><a href="main.html">Register for the cohort</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <p>Start your <span style="color: #EFFF3A;">Coding Journey</span><br>by learning from <br><span
+                    style="font-family:'Josefin Sans', sans-serif; color: #EA98FF; font-size: 45px;">THE BEST</span></p>
+            <img src="https://drive.google.com/uc?id=1bITxNTk-99DsKKN8wqWkPQI-q25tdxY8" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="card">
+            <img src="https://drive.google.com/uc?id=1hstWUAH4Izzd7fjno3y2bV7YgBdcCmJY">
+            <h3>Anish De</h3>
+            <p>SWE - <span class="card-text">Microsoft</span> <br>
+                Candidate Master - <span class="card-text">CodeForces</span><br>
+                SWE Intern - <span class="card-text">Media.Net, Microsoft</span><br>
+                Guardian (Top 0.2%) - <span class="card-text">LeetCode</span><br>
+                ICPC 3X Regionalist <br>
+                Ex Problem Setter - <span class="card-text">LeetCode, HackerRank, Scaler</span> <br>
+                <span class="card-text">18+</span> Mentorships done with a rating of <span class="card-text">5</span> on <span class="card-text">Topmate</span>
+            </p>
+        </div>
+    </div>
+    <script>
+        var menuIcon = document.querySelector('.menu-icon');
+        var navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', function () {
+            menuIcon.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
