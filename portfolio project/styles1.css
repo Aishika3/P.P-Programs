@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.sidebar{
+   /* background-color: red;*/
+    font-family: 'Fira Sans', sans-serif;
+    height:100vh;
+    background-color:aqua;
+    width:400px;
+    transition:0.1s ease-in;
+}
+.sidebar nav{
+    padding:1px;
+}
+.sidebar nav li{
+    list-style:none;
+    font-size: 30px;
+    padding:33px 0;
+}
+.sidebar nav li a{
+    text-decoration:none;
+    color:black;
+}
+.main{
+   /* background-color: yellow;*/
+    width:90vw;
+    padding:23px;
+}
+.container{
+    display: flex;
+}
+.infoContainer{
+    /*background-color: rgb(231, 189, 214);*/
+    height: 50vh;
+    width: 80vw;
+    margin: 147px auto;
+    display:flex;
+    justify-content:space-around;
+}
+.devPic img{
+    width: 400px;
+    border-radius: 50%;
+    height: 381px;
+    background-image:url("me.jpg");
+    background-size:cover;
+}
+.hello{
+    font-size:65px;
+}
+.about{
+    font-size:40px;
+}
+.name{
+    font-size:80px;
+    font-family: 'Fira Sans', sans-serif;
+}
+.btn{
+    padding:14px;
+    border-radius:90px;
+    color:aliceblue;
+    background-color:blueviolet;
+    font-size:23px;
+    margin:25px;
+    cursor:pointer;
+}
+.btn:hover{
+    color:black;
+    background-color:aliceblue;
+
+}
+.devInfo{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    font-family:'Source Code Pro', monospace;
+}
+.contactform{
+    font-family:'Source Code Pro', monospace;
+    padding-left: 40px;
+    text-align:center;
+    padding-top: 100px;
+}
+.contactfrom h1{
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+}
+.contactform div{
+    padding:27px;
+    font-size:20px;
+    flex-direction:column;
+}
+#emailHelp{
+    font-size:8px;
+    color:midnightblue;
+    margin: 0 5px;
+}
+.intro h1{
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 20px;
+}
+.intro h2{
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 12px;
+}
+.intro p{
+    font-family:'Source Code Pro', monospace;
+    margin-top: 12px;
+}
+.skill{
+    width:265px;
+    height:6px;
+    background-color:blue;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+.skillItem{
+    display:flex;
+    font-family:'Source Code Pro', monospace;
+    font-weight: 900;
+}
+.hunderd{
+    width:265px;
+}
+.seventy{
+    width:200px;
+}
+.fifty{
+    width:125px;
+}
+.twentyfive{
+    width:75px;
+}
+@media(max-width: 300px)
+{
+    *{
+    background-color: rgb(255, 255, 255);
+    }
+.sidebar{
+    transform:translate(-443px,0px);
+    position:absolute;
+}
+.devPic img{
+    width: 10px;
+    border-radius: 50%;
+    height: 1px;
+    background-image:url("me.jpg");
+    background-size:cover;
+}
+}
+/*@media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller 
+    }
+  }*/
+.sidebarGo{
+    transform: translate(-443px, 0px);
+    position:absolute;
+}
+.hamburger{
+    position:absolute;
+    cursor:pointer;
+    top:30px;
+    left:5px;
+}
+.cross{
+    margin-left:-25px;
+    margin-top:-5px;
+    cursor:pointer;
+}
